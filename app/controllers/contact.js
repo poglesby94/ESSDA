@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
               this.set('content','');
          },()=>{
               this.set('errorMessage',"Oops! Something went wrong, try again later!");
-              this.set('successMessage','')
+              this.set('successMessage','');
          });
        }
      }

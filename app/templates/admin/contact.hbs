@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-sm-offset-3">
+     {{#each model as |message|}}
+               {{#message-card msg=message}}
+               <a href="mailto:{{message.email}}?Subject=Re:{{message.topic}}">
+                    <button class="btn btn-success btn-md ">Reply</button>
+               </a>
+               <a href="mailto:?Subject=Fwd:{{message.topic}}&body={{message.content}}">
+                    <button class="btn btn-primary btn-md ">Forward</button>
+               </a>
+               <button class="btn btn-danger btn-md " {{action 'deleteMessage' message}}>Delete</button>
+
+               {{/message-card}}
+     {{else}}
+          <div align="center">No Messages.</div>
+     {{/each}}
+</div>
