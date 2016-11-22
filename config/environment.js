@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+
+torii: { sessionServiceName: 'session' },
+baseUrl: '/',
     modulePrefix: 'essda',
     environment: environment,
     rootURL: '/',

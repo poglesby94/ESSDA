@@ -9,8 +9,10 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('news');
   this.route('contact');
+  this.route('clubs');
   this.route('admin', function() {
     this.route('contact');
+    this.route('fixtures');
     this.route('news', function() {
       this.route('new');
     });
@@ -18,6 +20,12 @@ Router.map(function() {
       this.route('new');
     });
   });
+  this.route('info', function() {
+    this.route('pvg');
+    this.route('essda');
+  });
+  this.route('fixtures');
+  this.route('sign-in');
 });
 
 export default Router;

@@ -1,8 +1,7 @@
 <div class="col-sm-6 col-sm-offset-3">
-     <div>{{outlet}}
-     </div>
-     <table class="table table-striped">
+     <table class="table table-striped table-sm">
           <tbody>
+               {{outlet}}
                {{#each model as |club|}}
                     <tr>
                          {{#if club.isEditing}}

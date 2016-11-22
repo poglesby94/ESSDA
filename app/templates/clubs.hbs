@@ -1,0 +1,14 @@
+<div class="col-sm-6 col-sm-offset-3">
+     <h1> ESSDA Clubs</h1>
+     <div class="row">
+               {{#each model as |club|}}
+                         <div class="col-md-4" align="center">
+                              <a href={{club.website}}>
+                                        <img height='100px'src={{club.logo}}>
+                                        <h4>{{club.name}}</h4>
+                              </a>
+                         </div>
+
+               {{/each}}
+     </div>
+</div>
