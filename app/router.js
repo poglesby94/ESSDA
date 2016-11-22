@@ -14,6 +14,9 @@ Router.map(function() {
     this.route('news', function() {
       this.route('new');
     });
+    this.route('clubs', function() {
+      this.route('new');
+    });
   });
 });
 

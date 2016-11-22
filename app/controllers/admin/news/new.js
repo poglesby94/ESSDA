@@ -20,9 +20,17 @@ export default Ember.Controller.extend({
             });
 
             newArticle.save().then(()=>{
+                this.set('title','');
+                this.set('content','');
                 this.transitionToRoute('admin.news.index');
-           });
+            });
+          },
+          cancelCreate(){
+               this.set('title','');
+               this.set('content','');
+               this.transitionToRoute('admin.news.index');
           }
+
      }
 
 });

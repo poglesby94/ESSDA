@@ -10,6 +10,17 @@ export default Ember.Route.extend({
                if(confirmation){
                     article.destroyRecord();
                }
+          },
+          editArticle(article){
+               article.set('isEditing',true);
+          },
+          cancelEdit(article){
+               article.set('isEditing',false);
+               article.rollbackAttributes();
+          },
+          saveEdit(article){
+               article.set('isEditing',false);
+               article.save();
           }
      }
 });

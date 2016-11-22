@@ -1,0 +1,25 @@
+<div class="col-sm-6 col-sm-offset-3">
+     <div>{{outlet}}
+     </div>
+     <table class="table table-striped">
+          <tbody>
+               {{#each model as |club|}}
+                    <tr>
+                         {{#if club.isEditing}}
+                              <td>{{input value=club.name class='form-control'}}</td>
+                              <td>{{input value=club.website class='form-control'}}</td>
+                              <td>{{input value=club.logo class='form-control'}}</td>
+                              <td><button class="btn btn-success btn-xs" {{action 'saveEdit' club}}>Save</button></td>
+                              <td><button class="btn btn-danger btn-xs" {{action 'cancelEdit' club}}>Cancel</button></td>
+                         {{else}}
+                              <td>{{club.name}}</td>
+                              <td>{{club.website}}</td>
+                              <td>{{club.logo}}</td>
+                              <td><button class="btn btn-primary btn-xs" {{action 'editClub' club}}>Edit</button></td>
+                              <td><button class="btn btn-danger btn-xs" {{action 'deleteClub' club}}>Delete</button></td>
+                         {{/if}}
+                    </tr>
+               {{/each}}
+          </tbody>
+     </table>
+</div>
