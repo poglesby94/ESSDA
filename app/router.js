@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('contact');
   this.route('admin', function() {
     this.route('contact');
+    this.route('news', function() {
+      this.route('new');
+    });
   });
 });
 

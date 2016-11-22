@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-sm-offset-3">
+     {{outlet}}
+     {{#each model as |newsArticle|}}
+          {{#article-read article=newsArticle}}
+          <div class="panel-footer">
+               <button class="btn btn-danger btn-md" {{action 'deleteArticle' newsArticle}}>Delete</button>
+          </div>
+          {{/article-read}}
+     {{else}}
+          <br/>
+          <div align="center">No News Articles.</div>
+     {{/each}}
+</div>

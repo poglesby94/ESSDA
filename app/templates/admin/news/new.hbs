@@ -1,0 +1,13 @@
+<div class="panel panel-default message-card">
+     <div class="panel-heading {{if topicValid 'has-success has-feedback'}}">
+               {{input type="text" value=title class="form-control" placeholder="Please type your title."}}
+               {{#if topicValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+     </div>
+     <div class="panel-body">
+               {{textarea class="form-control" placeholder="Please type your news." rows="4" value=content}}
+     </div>
+     <div class="panel-footer">
+          <button class="btn btn-success btn-md" disabled={{isDisabled}} {{action 'postArticle'}}>Create</button>
+          <button class="btn btn-danger btn-md">Cancel</button>
+     </div>
+</div>

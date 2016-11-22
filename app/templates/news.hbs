@@ -1,0 +1,8 @@
+<div class="col-sm-6 col-sm-offset-3">
+     {{#each model as |newsArticle|}}
+          {{article-read article=newsArticle}}
+     {{else}}
+          <br/>
+          <div align="center">No News Articles.</div>
+     {{/each}}
+</div>
