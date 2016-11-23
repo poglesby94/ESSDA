@@ -1,6 +1,6 @@
-<div class="col-sm-6 col-sm-offset-3">
+<div class="col-sm-8 col-sm-offset-2">
      {{outlet}}
-     {{#each model as |newsArticle|}}
+     {{#each sortedModel as |newsArticle|}}
           {{#if newsArticle.isEditing}}
                <div class="panel panel-default">
                     <div class="panel-heading">

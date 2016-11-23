@@ -1,7 +1,18 @@
-<tr>
-               <td class="input-group-sm">{{input value=name class='form-control' placeholder="Please type the clubs name."}}</td>
-               <td class="input-group-sm">{{input value=website class='form-control' placeholder="Please type the clubs website url."}}</td>
-               <td class="input-group-sm">{{input value=logo class='form-control' placeholder="Please type the clubs logo url." }}</td>
-               <td><button class="btn btn-success btn-xs" disabled={{isDisabled}} {{action 'createClub'}}>Save</button></td>
-               <td><button class="btn btn-danger btn-xs" {{action 'cancelCreate' club}}>Cancel</button></td>
-</tr>
+<thead>
+     <tr>
+          <td>Name</td>
+          <td>Website</td>
+          <td>Logo</td>
+          <td>Keyword</td>
+          <td>Actions</td>
+     </tr>
+
+     <tr>
+                    <td class="input-group-sm">{{input value=name class='form-control' placeholder="Name."}}</td>
+                    <td class="input-group-sm">{{input value=website class='form-control' placeholder="Website URL."}}</td>
+                    <td class="input-group-sm">{{input value=logo class='form-control' placeholder="Logo URL." }}</td>
+                    <td class="input-group-sm">{{input value=keyword class='form-control' placeholder="Keyword." }}</td>
+                    <td><button class="btn btn-success btn-xs" disabled={{isDisabled}} {{action 'createClub'}}>Save</button>
+                    <button class="btn btn-danger btn-xs" {{action 'cancelCreate' club}}>Cancel</button></td>
+     </tr>
+</thead>
