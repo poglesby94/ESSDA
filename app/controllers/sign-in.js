@@ -13,16 +13,15 @@ export default Ember.Controller.extend({
 
      actions:{
           signIn(provider) {
-               let controller = this;
+               
                this.get('session').open('firebase', {
                     provider: provider,
                     email: this.get('emailaddress') || '',
                     password: this.get('password') || '',
                }).then(() => {
-                    controller.set('emailaddress', null);
-                    controller.set('password', null);
+                    this.transitionToRoute('admin');
                }, () => {
-                    this.set('errorMessage',"Error!");
+                    this.set('errorMessage',"Error! Incorrect email/password combination.");
                });
           }
      }

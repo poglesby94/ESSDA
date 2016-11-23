@@ -12,7 +12,6 @@ Router.map(function() {
   this.route('clubs');
   this.route('admin', function() {
     this.route('contact');
-    this.route('fixtures');
     this.route('news', function() {
       this.route('new');
     });
@@ -24,7 +23,6 @@ Router.map(function() {
     this.route('pvg');
     this.route('essda');
   });
-  this.route('fixtures');
   this.route('sign-in');
 });
 
