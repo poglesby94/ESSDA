@@ -1,8 +1,10 @@
 {{!--News articles rendering is delegated to this component as they are the same panel format--}}
 <div class="panel panel-default message-card">
      <div class="panel-heading">
-        <h3>{{article.title}}</h3>
-        {{#link-to 'news.article'}}<h5>{{formatDate article.created}}</h5>{{/link-to}}
+        {{#link-to 'news.article' article.id}} {{!--Link to dynamic page for a single news article(for sharing on social media)--}}
+               <h3>{{article.title}}</h3>
+        {{/link-to}}
+        <h5>{{formatDate article.created}}</h5>
      </div>
      <div class="panel-body">
           {{formatNews article.content}}{{!--Information is provided by admin, so can allow it to be rendered as pure html safe, for more effect(dont believe admin will be running malicous code on this site)--}}
