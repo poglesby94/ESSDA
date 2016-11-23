@@ -1,4 +1,6 @@
-<div class="col-sm-6 col-sm-offset-3">
+<div class="col-sm-6 col-sm-offset-3"> {{!--Centered on page, slimmer than other pages
+     Simple form to submit a message to admin section
+     Feedback through bootstrap glyphicons if an input field is valid--}}
      <h1> Contact Us </h1>
      <p>Please submit your comment or query to ESSDA using the form below.</p>
      <div>
@@ -26,13 +28,14 @@
           {{input type="text" value=topic class="form-control" placeholder="Please type your topic."}}
           {{#if topicValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
      </div>
-
+      {{!--The content of a message will definately be longer than a simple input field so using a textarea--}}
      <div class="form-group">
           <label>Your Message:</label>
           {{textarea class="form-control" placeholder="Your message." rows="5" value=content}}
      </div>
 
      <br/>
+      {{!--Submit button only available if valid email entered and all fields are non-empty--}}
      <button type="button" class="btn btn-success btn-default" disabled={{isDisabled}} {{action 'sendMessage'}}>Send</button>
      <br/>
      <br/>

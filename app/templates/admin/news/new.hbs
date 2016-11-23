@@ -1,12 +1,14 @@
+{{!--Renders an empty form in a panel for the user to create a news article--}}
 <div class="panel panel-default message-card">
      <div class="panel-heading {{if topicValid 'has-success has-feedback'}}">
                {{input type="text" value=title class="form-control" placeholder="Please type your title."}}
                {{#if topicValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
      </div>
      <div class="panel-body">
-               {{textarea class="form-control" placeholder="Please type your news." rows="4" value=content}}
+               {{textarea class="form-control" placeholder="Please type your news in raw HTML format." rows="4" value=content}}
      </div>
      <div class="panel-footer">
+          {{!--The 'Create' button is only available if both title and content fields are non-empty--}}
           <button class="btn btn-success btn-md" disabled={{isDisabled}} {{action 'postArticle'}}>Create</button>
           <button class="btn btn-danger btn-md" {{action 'cancelCreate'}}>Cancel</button>
      </div>

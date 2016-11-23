@@ -1,10 +1,11 @@
+{{!--News articles rendering is delegated to this component as they are the same panel format--}}
 <div class="panel panel-default message-card">
      <div class="panel-heading">
         <h3>{{article.title}}</h3>
         <h5>{{formatDate article.created}}</h5>
      </div>
      <div class="panel-body">
-          {{formatNews article.content}}
+          {{formatNews article.content}}{{!--Information is provided by admin, so can allow it to be rendered as pure html safe, for more effect(dont believe admin will be running malicous code on this site)--}}
      </div>
-     {{yield}}
+     {{yield}} {{!--In the /news, there is no need for a footer, but in admin section, users have edit/delete functionality available through the panel footer--}}
 </div>

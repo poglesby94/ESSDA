@@ -1,13 +1,14 @@
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-8 col-sm-offset-2"> {{!--Centered on the page--}}
      <table class="table table-striped table-sm">
-               {{outlet}}
+               {{outlet}} {{!--Either create button(/index) or the form to create a new club(/create) are rendered in the first line of the table(<thead>)--}}
                <tbody>
                {{#each model as |club|}}
                     <tr>
-                         {{#if club.isEditing}}
+                         {{#if club.isEditing}} {{!--Simple state tracked in the controller if the user wishes to update a club record--}}
                               <td>{{input value=club.name class='form-control'}}</td>
                               <td>{{input value=club.website class='form-control'}}</td>
                               <td>{{input value=club.logo class='form-control'}}</td>
+                              {{!--Functional buttons are rendered in the same cell for formatting sake(May need to be addressed)--}}
                               <td><button class="btn btn-success btn-xs" {{action 'saveEdit' club}}>Save</button>
                               <button class="btn btn-danger btn-xs" {{action 'cancelEdit' club}}>Cancel</button></td>
                          {{else}}

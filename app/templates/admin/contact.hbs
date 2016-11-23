@@ -1,7 +1,8 @@
 <div class="col-sm-8 col-sm-offset-2">
-     {{#each sortedModel as |message|}}
-               {{#message-card msg=message}}
-               <a href="mailto:{{message.email}}?Subject=Re:{{message.topic}}">
+     {{!--Currently displays all messages in the database, will have to be revised to introduce pagination--}}
+     {{#each sortedModel as |message|}} {{!--records are returned from the store in chronological order by the controller--}}
+               {{#message-card msg=message}} {{!--message content are rendered through the component--}}
+               <a href="mailto:{{message.email}}?Subject=Re:{{message.topic}}">  {{!--No functionality of replying from within the ember app at the moment--}}
                     <button class="btn btn-success btn-md ">Reply</button>
                </a>
                <a href="mailto:?Subject=Fwd:{{message.topic}}&body={{message.content}}">

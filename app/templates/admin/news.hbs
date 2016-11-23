@@ -1,29 +1,30 @@
-<div class="col-sm-8 col-sm-offset-2">
-     {{outlet}}
-     {{#each sortedModel as |newsArticle|}}
-          {{#if newsArticle.isEditing}}
+<div class="col-sm-8 col-sm-offset-2">  {{!--Container to ensure centering on the page--}}
+     {{outlet}} {{!--Create button shown(/index) or form to generate news article (/create)--}}
+     {{!--Currently displays all articles, should implement pagination based on year of creation--}}
+     {{#each sortedModel as |newsArticle|}} {{!--News articles are returned from the store by the controller in chronological order (by 'created' field)--}}
+          {{#if newsArticle.isEditing}}  {{!--Simple state tracked in the controller if a newsArticle has been selected to edit(will not persist across routes)--}}
                <div class="panel panel-default">
                     <div class="panel-heading">
                          {{input value=newsArticle.title class='form-control'}}
                          <h5>{{formatDate newsArticle.created}}</h5>
                     </div>
                     <div class="panel-body">
-                         {{textarea class="form-control" rows="4" value=newsArticle.content}}
+                         {{textarea class="form-control" rows="4" value=newsArticle.content}} {{!--News article will have long body so use textarea instead of input box--}}
                     </div>
                     <div class="panel-footer">
                          <button class="btn btn-success btn-md" {{action 'saveEdit' newsArticle}}>Save</button>
                          <button class="btn btn-danger btn-md" {{action 'cancelEdit' newsArticle}}>Cancel</button>
                     </div>
                </div>
-          {{else}}
+          {{else}}  {{!--If news articles are in read mode we delegate rendering to the component--}}
                {{#article-read article=newsArticle}}
-               <div class="panel-footer">
+               <div class="panel-footer"> {{!--Update/Delete functionality is only avalible here, so is yielded to by component--}}
                     <button class="btn btn-primary btn-md" {{action 'editArticle' newsArticle}}>Edit</button>
                     <button class="btn btn-danger btn-md" {{action 'deleteArticle' newsArticle}}>Delete</button>
                </div>
                {{/article-read}}
           {{/if}}
-     {{else}}
+     {{else}} {{!--Feedback to user instead of simply empty list--}}
           <br/>
           <div align="center">No News Articles.</div>
      {{/each}}

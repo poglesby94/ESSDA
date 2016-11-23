@@ -1,11 +1,12 @@
 <div class="col-xs-3 col-sm-offset-3">
      <h1>Sign In</h1>
-     {{#if errorMessage}}
+     {{#if errorMessage}}   {{!--Alert only shown if a login attempt fails--}}
           <div class="alert alert-danger" role="alert">
                Error! Wrong username/password combination.
           </div>
      {{/if}}
      <div>
+           {{!--Forms should be made so that label and input are on the same line--}}
           <div class="form-group">
                <label>Email:</label>
                {{input type="email" value=emailaddress class="form-control" placeholder="Please type your email."}}
@@ -14,6 +15,7 @@
                <label>Password:</label>
                {{input type="password" value=password class="form-control" placeholder="Please type your password."}}
           </div>
+           {{!--Button only available if email and password fields are of valid format--}}
           <button class="btn btn-md btn-success" {{action 'signIn' 'password'}} disabled={{isDisabled}}>Login</button>
      </div>
 </div>

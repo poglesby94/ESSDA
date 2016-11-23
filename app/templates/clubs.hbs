@@ -1,9 +1,10 @@
-<div class="col-sm-8 col-sm-offset-2">
-     <h1> ESSDA Clubs</h1>
+<div class="col-sm-8 col-sm-offset-2"> {{!--Centered container on the page
+     List clubs in a table--}}
+     <h1> ESSDA Clubs</h1> 
      <div class="row">
-               {{#each sortedModel as |club|}}
-                         <div class="col-md-4" align="center">
-                              <a href={{club.website}}>
+               {{#each sortedModel as |club|}}    {{!--Clubs are returned from the controller in alphabetical order by name--}}
+                         <div class="col-md-4" align="center"> {{!--By making images fit in a column of width 4, they display 3 to a line or 1 to a line(small screen)--}}
+                              <a href={{club.website}}>          {{!--This could be fixed to allow for dynamic resizing results--}}
                                         <img height='100px'src={{club.logo}}>
                                         <h4>{{club.name}}</h4>
                               </a>
