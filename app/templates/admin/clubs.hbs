@@ -8,14 +8,12 @@
                               <td>{{input value=club.name class='form-control'}}</td>
                               <td>{{input value=club.website class='form-control'}}</td>
                               <td>{{input value=club.logo class='form-control'}}</td>
-                              <td>{{input value=club.keyword class='form-control'}}</td>
                               <td><button class="btn btn-success btn-xs" {{action 'saveEdit' club}}>Save</button>
                               <button class="btn btn-danger btn-xs" {{action 'cancelEdit' club}}>Cancel</button></td>
                          {{else}}
                               <td>{{club.name}}</td>
                               <td>{{club.website}}</td>
                               <td>{{club.logo}}</td>
-                              <td>{{club.keyword}}</td>
                               <td><button class="btn btn-primary btn-xs" {{action 'editClub' club}}>Edit</button>
                               <button class="btn btn-danger btn-xs" {{action 'deleteClub' club}}>Delete</button></td>
                          {{/if}}
