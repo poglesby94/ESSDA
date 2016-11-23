@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('news');
+  this.route('news', function(){
+       this.route('article');
+   });
   this.route('contact');
   this.route('clubs');
   this.route('admin', function() {

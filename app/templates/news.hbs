@@ -1,8 +1,2 @@
-<div class="col-sm-8 col-sm-offset-2">   {{!--Ensures centering on the page--}}
-     {{#each sortedModel as |newsArticle|}}  {{!--Articles returned from the controller in alphabetical order--}}
-          {{article-read article=newsArticle}}     {{!--Delegate news article template to component--}}
-     {{else}}
-          <br/>
-          <div align="center">No News Articles.</div>   {{!--Positive feedback instead of empty screen--}}x
-     {{/each}}
-</div>
+{{!--No output required here--}}
+{{outlet}}
