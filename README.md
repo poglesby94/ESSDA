@@ -1,6 +1,6 @@
 # Essda
 
-This app is a demonstration built using the Ember library, and is available at https://essda-af40f.firebaseapp.com .
+This app is hosted at https://essda-af40f.firebaseapp.com . It is a redesign of the website found at http://essda.co.uk, and was built using Ember.js with Bootstrap for the interface.
 
 ## Prerequisites
 
